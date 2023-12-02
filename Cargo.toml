@@ -9,3 +9,7 @@ debug = false
 lto = "fat"
 opt-level = 3
 strip = "debuginfo"
+
+[[bin]]
+name = "day01"
+path = "src/day01/main.rs"

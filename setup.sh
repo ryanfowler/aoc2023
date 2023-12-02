@@ -7,7 +7,7 @@ day=$1
 if [[ ! -d ./src/day${day} ]]
 then
     echo "Creating directory for day${day}"
-    mkdir ./src/day"${day}"
+    mkdir -p ./src/day"${day}"
 fi
 
 # Create the main.rs file, if necessary.
@@ -22,7 +22,7 @@ if [[ ! -f ./src/day${day}/input.txt ]]
 then
     echo "Downloading input for day${day}"
     cookie=$(cat ./session.txt)
-    curl -s -b "session=${cookie}" -o ./src/day"${day}"/input.txt https://adventofcode.com/2022/day/"${day/#0}"/input
+    curl -s -b "session=${cookie}" -o ./src/day"${day}"/input.txt https://adventofcode.com/2023/day/"${day/#0}"/input
 fi
 
 # Add bin to Cargo.toml, if necessary.
